@@ -13,12 +13,21 @@
 
 
             <div class=" px-0 d-flex flex-row justify-content-space-between">
-                <div class="px-0 d-flex flex-row ">
-                    <a class="topbar-link nav-item nav-link" href="/profile.php">Account</a>
+                <div class="px-0 d-flex flex-row "><?php
+                   echo' <a class="topbar-link nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'">Account</a>';
+                   ?>
                     <a class="account nav-item nav-link" href="/profile.php"></a>
                     <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
                     <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
-                    <a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>
+                    <?php
+                    if (!isset($_SESSION['loggedin'])) {
+                        $_SESSION['loggedin'] = 0;
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>';
+                    }
+                    else {
+                        echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Logout</a>';
+                    }
+                    ?>
                     <a class="login nav-item nav-link" href="/login.html"></a>
                 </div>
             </div>
