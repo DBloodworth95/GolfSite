@@ -1,7 +1,8 @@
 
 
-<?php 
+<?php
 
+session_start();
 
 $login ='Log in';
 
@@ -33,3 +34,5 @@ $footer = ob_get_clean();
 
 require '../templates/layout.html.php';
 ?>
+
+<?php require 'basket.html.php'?>

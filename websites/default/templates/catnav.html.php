@@ -4,9 +4,9 @@
     <nav
         class="navbar d-none d-lg-flex bg-light align-items-center justify-content-around  border-bottom border-dark sticky-top secondNav">
         <!-- <div class="navbar-brand">WEBSITE COOL </div> -->
-        <a class="cat-drop-down nav-item nav-link active" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link active" href="/category.html.php">Clubs </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Clothes </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Balls </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
