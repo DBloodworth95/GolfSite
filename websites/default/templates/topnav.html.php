@@ -14,12 +14,12 @@
 
             <div class=" px-0 d-flex flex-row justify-content-space-between">
                 <div class="px-0 d-flex flex-row ">
-                    <a class="topbar-link nav-item nav-link" href="/basket.html">Account</a>
-                    <a class="account nav-item nav-link" href="basket.html"></a>
-                    <a class="topbar-link nav-item nav-link" href="basket.html">Basket</a>
-                    <a class="basket nav-item nav-link" href="basket.html"><span class="basket-counter">100</span></a>
-                    <a class="topbar-link nav-item nav-link" href="basket.html">Log in/Register</a>
-                    <a class="login nav-item nav-link" href="basket.html"></a>
+                    <a class="topbar-link nav-item nav-link" href="/account.html">Account</a>
+                    <a class="account nav-item nav-link" href="/account.html"></a>
+                    <a class="topbar-link nav-item nav-link" href="/basket.html">Basket</a>
+                    <a class="basket nav-item nav-link" href="/basket.html"><span class="basket-counter">100</span></a>
+                    <a class="topbar-link nav-item nav-link" href="/login.html">Log in/Register</a>
+                    <a class="login nav-item nav-link" href="/login.html"></a>
                 </div>
             </div>
         </div>
