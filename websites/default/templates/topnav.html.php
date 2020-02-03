@@ -1,5 +1,10 @@
 
     <!-- big screen nav -->
+    <?php
+        if (!isset($_SESSION['loggedin'])) {
+            $_SESSION['loggedin'] = 0;
+        }
+    ?>
     <nav class="navbar d-none d-lg-flex navbar-light bg-light 
         border-top border-bottom border-dark sticky-top basketNav p-0">
         <div class="container-fluid px-4 d-flex flex-row justify-content-between">
@@ -20,7 +25,7 @@
                     <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
                     <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
                     <?php
-                    if (!isset($_SESSION['loggedin'])) {
+                    if ($_SESSION['loggedin'] == 0) {
                         $_SESSION['loggedin'] = 0;
                     echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>';
                     }
