@@ -174,6 +174,8 @@ CREATE TABLE `users` (
   `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `firstname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `surname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
