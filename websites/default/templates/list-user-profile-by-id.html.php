@@ -24,11 +24,6 @@
                                                 Address</strong></label><input class="form-control" type="email"
                                             placeholder="<?=$user['email'];?>" name="email"></div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group"><label for="email"><strong>User ID
-                                                </strong></label><input class="form-control" type="email"
-                                            placeholder="<?=$user['email'];?>" name="userid"></div>
-                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="col">
