@@ -4,14 +4,18 @@ session_start();
 
 require '../templates/connect.php';
 
-// require '../templates/find-product-by-id.php';
+require '../templates/find-products-by-user-wishlist.php';
 
 ob_start();
-require '../templates/booking.html.php';
+
+require '../templates/list-products-by-user-wishlist.html.php';
 $content = ob_get_clean();
 
-// $login ='Log in';
 
+
+
+
+// $login ='Log in';
 ob_start();
 require '../templates/find-categories.php';
 require '../templates/topnav.html.php';
@@ -35,7 +39,3 @@ $footer = ob_get_clean();
 
 require '../templates/layout-no-carousel.html.php';
 ?>
-
-
-
-

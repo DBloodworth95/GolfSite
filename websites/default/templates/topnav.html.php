@@ -62,8 +62,8 @@
                 </div>
 
                 <div class="wishlist-container d-flex flex-row align-items-center py-3 ">
-                    <a class="p-0 pr-3 nav-item nav-link" href="#">Wishlist </a>
-                    <a class="p-0 wishlist nav-item nav-link" href="#"></a>
+                    <a class="p-0 pr-3 nav-item nav-link" href="wishlist.php">Wishlist </a>
+                    <a class="p-0 wishlist nav-item nav-link" href="wishlist.php"></a>
 
                 </div>
                 <form class="form-inline align-items-center pb-3 pt-4 px-0 ">

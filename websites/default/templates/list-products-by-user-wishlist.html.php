@@ -28,8 +28,6 @@
         <a href="#"><button class="load-more d-flex align-items-center justify-content-center"> </button></a>
     </div>
 
-
-
     <?php 
     
 $products = $pdo->prepare('SELECT * FROM products');

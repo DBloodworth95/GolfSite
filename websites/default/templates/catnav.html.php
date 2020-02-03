@@ -6,8 +6,8 @@
 
         
         <div class="d-flex flex-row align-items-center">
-            <a class="p-0 pr-1 nav-item nav-link font-weight-bold" href="#">Wishlist </a>
-            <a class="p-0 wishlist nav-item nav-link" href="#"></a>
+            <a class="p-0 pr-1 nav-item nav-link font-weight-bold" href="wishlist.php">Wishlist </a>
+            <a class="p-0 wishlist nav-item nav-link" href="wishlist.php"></a>
         </div>
         <form class=" form-inline align-content-center ">
             <div class="input-group align-items-center">
