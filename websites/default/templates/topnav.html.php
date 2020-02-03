@@ -16,10 +16,10 @@
                 <div class="px-0 d-flex flex-row ">
                     <a class="topbar-link nav-item nav-link" href="/profile.php">Account</a>
                     <a class="account nav-item nav-link" href="/profile.php"></a>
-                    <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
-                    <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
-                    <a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>
-                    <a class="login nav-item nav-link" href="/login.html"></a>
+                    <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
+                    <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
+                    <a class="topbar-link nav-item nav-link" href="/login.php"> Log in /Register</a>
+                    <a class="login nav-item nav-link" href="/login.php"></a>
                 </div>
             </div>
         </div>
@@ -49,9 +49,9 @@
 
 
             <div class=" drop-icons d-flex flex-row align-items-center  p-0 m-0">
-                <a href="basket.html" class="account nav-item nav-link"></a>
-                <a href="basket.html" class="basket nav-item nav-link"><span class="basket-counter">10</span></a>
-                <a href="basket.html" class="login nav-item nav-link"></a>
+                <a href="/profile.php" class="account nav-item nav-link"></a>
+                <a href="/basket.php" class="basket nav-item nav-link"><span class="basket-counter">10</span></a>
+                <a href="/login.php" class="login nav-item nav-link"></a>
             </div>
 
 
