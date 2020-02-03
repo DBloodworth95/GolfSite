@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Page</title>
+    <script src="main.js"></script>
+    
+</head>
+
+<body>
+
+
+    <!-- big screen nav -->
+    <nav class="navbar d-none d-lg-flex navbar-light bg-light 
+        border-top border-bottom border-dark sticky-top basketNav p-0">
+        <div class="container-fluid px-4 d-flex flex-row justify-content-between">
+
+
+            <div class=" d-flex flec-row align-self-center justify-self-start p-0">
+                <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="#"><span
+                        class="brandLogo p-0"> </span></a>
+                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> GOLFERS ONLY </a>
+            </div>
+
+
+            <div class=" px-0 d-flex flex-row justify-content-space-between">
+                <div class="px-0 d-flex flex-row ">
+                    <a class="topbar-link nav-item nav-link" href="basket.html">Account</a>
+                    <a class="account nav-item nav-link" href="basket.html"></a>
+                    <a class="topbar-link nav-item nav-link" href="basket.html">Basket</a>
+                    <a class="basket nav-item nav-link" href="basket.html"><span class="basket-counter">100</span></a>
+                    <a class="topbar-link nav-item nav-link" href="basket.html">Log in/Register</a>
+                    <a class="login nav-item nav-link" href="basket.html"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CAROUSEL -->
+    <div id="carouselExampleIndicators" class="carousel slide carousel-top" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#"><img class="d-block w-100" src="images/g1.jpeg" alt="First slide"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="#"> <img class="d-block w-100" src="images/g2.jpeg" alt="Second slide"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="#"> <img class="d-block w-100" src="images/g3.jpeg" alt="Third slide"></a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <!-- drop down -->
+    <nav class="navbar d-lg-none navbar-light bg-light  border-top sticky-top py-2 px-0">
+        <div class="container-fluid align-content-center ">
+
+            <button class="navbar-toggler  d-lg-none d-flex flex-column justify-self-start" type="button"
+                data-toggle="collapse" data-target="#toggleMyNav" aria-controls="toggleMyNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <div class=" d-flex flex-row align-content-center justify-self-center p-0">
+                <a class="navbar-brand d-flex align-self-center  p-0" href="#"><span class="brandLogo p-0"> </span></a>
+                <a class="navbar-brand  title d-flex align-self-center p-0" href="#"> GOLFERS ONLY </a>
+            </div>
+
+
+            <div class=" drop-icons d-flex flex-row align-items-center  p-0 m-0">
+                <a href="basket.html" class="account nav-item nav-link"></a>
+                <a href="basket.html" class="basket nav-item nav-link"><span class="basket-counter">10</span></a>
+                <a href="basket.html" class="login nav-item nav-link"></a>
+            </div>
+
+
+            <!-- collapsible -->
+            <div class=" px-0 pb-0 pt-3 collapse navbar-collapse" id="toggleMyNav">
+                <div class="separator px-0">
+                    <a class="px-0 nav-item nav-link active" href="#">Category </a>
+                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                </div>
+
+                <div class="wishlist-container d-flex flex-row align-items-center py-3 ">
+                    <a class="p-0 pr-3 nav-item nav-link" href="#">Wishlist </a>
+                    <a class="p-0 wishlist nav-item nav-link" href="#"></a>
+
+                </div>
+                <form class="form-inline align-items-center pb-3 pt-4 px-0 ">
+                    <div class="input-group align-items-center">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-dark" type="submit"> Go </button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- end collapsible  -->
+        </div>
+
+        </div>
+    </nav>
+
+
+    <!-- second nav -->
+    <nav
+        class="navbar d-none d-lg-flex bg-light align-items-center justify-content-around  border-bottom border-dark sticky-top secondNav">
+        <!-- <div class="navbar-brand">WEBSITE COOL </div> -->
+        <a class="cat-drop-down nav-item nav-link active" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        <div class="d-flex flex-row align-items-center">
+            <a class="p-0 pr-1 nav-item nav-link font-weight-bold" href="#">Wishlist </a>
+            <a class="p-0 wishlist nav-item nav-link" href="#"></a>
+        </div>
+        <form class=" form-inline align-content-center ">
+            <div class="input-group align-items-center">
+                <input class="form-control" type="text" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-dark" type="submit"> Go </button>
+                </div>
+            </div>
+        </form>
+
+    </nav>
+    <!--end second nav -->
+
+
+
+
+    <!-- second nav drops -->
+
+    <div class="container-fluid drop-content  px-5 py-3">
+
+        <div class="row d-flex ">
+
+            <div class=" col d-flex flex-column  ">
+                <a class="title"> Sub Category 1</a>
+                <a href="#">Sub-subcategory 1</a>
+                <a href="#">Sub-subcategory 2</a>
+                <a href="#">Sub-subcategory 3</a>
+            </div>
+
+            <div class=" col d-flex flex-column px-5">
+                <a class="title"> Sub Category 1</a>
+                <a href="#">Sub-subcategory 1</a>
+                <a href="#">Sub-subcategory 2</a>
+                <a href="#">Sub-subcategory 3</a>
+            </div>
+
+            <div class=" col d-flex flex-column px-5">
+                <a class="title"> Sub Category 1</a>
+                <a href="#">Sub-subcategory 1</a>
+                <a href="#">Sub-subcategory 2</a>
+                <a href="#">Sub-subcategory 3</a>
+            </div>
+
+
+            <div class=" col-3 justify-self-end ad d-flex flex-column px-5">
+
+                <button class="drop-button d-flex align-self-center"> <a href="#">SHOP NOW</a></button>
+            </div>
+
+        </div> <!-- end row-->
+    </div> <!-- end container-->
+
+
+
+    <main class="container-fluid p-0">
+
+        <div class="col-12 orange-bg d-flex justify-content-center py-3">
+            <h1><a href="#">NEW ARRIVALS</a></h1>
+        </div>
+
+        <div class="container-fluid d-flex flex-wrap justify-content-space-between px-0">
+            <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g1.jpeg"></a></div>
+            <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g2.jpeg"></a></div>
+        </div>
+
+
+        <div class="col-12 black-bg d-flex justify-content-center py-3">
+            <h1><a href="#">ON SALE</a></h1>
+        </div>
+       
+        <div class="container-fluid d-flex flex-wrap justify-content-space-between px-0">
+                <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g1.jpeg"></a></div>
+                <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g2.jpeg"></a></div>
+            </div>
+    
+
+
+        <div class="col-12 white-bg d-flex justify-content-center py-3">
+            <h1><a href="#">BRANDS</a></h1>
+        </div>
+       
+        <div class="container-fluid d-flex flex-wrap justify-content-space-between px-0">
+                <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g1.jpeg"></a></div>
+                <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g2.jpeg"></a></div>
+            </div>
+    
+
+    </main>
+
+
+
+    <div class="footer container-fluid py-5">
+        <div class="footer-70vw">
+            <div class="row d-flex justify-content-space-around">
+
+                <div class=" col d-flex flex-column">
+                    <a class="title"> About Us</a>
+                    <a href="#">History</a>
+                    <a href="#">Concept</a>
+                    <a href="#">Values</a>
+                </div>
+
+                <div class=" col d-flex flex-column">
+                    <a class="title">Help</a>
+                    <a href="#">Lessons</a>
+                    <a href="#">Quality check</a>
+                    <a href="#">Custom</a>
+                </div>
+
+                <div class=" col d-flex flex-column">
+                    <a class="title"> Terms and Coditions</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Security</a>
+                    <a href="#">Payments</a>
+                </div>
+
+                <div class="col-4 d-none d-lg-flex flex-column container-fluid  justify-content-start">
+                    <span class="d-flex justify-content-center  pb-3 "> Subscribe to our newsletter?</span>
+                    <form class="footer-form form-inline align-content-start justify-content-center ">
+                        <div class="input-group align-content-center">
+                            <input class="form-control" type="text" placeholder="email address">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-dark" type="submit"> Subscribe </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row d-flex d-lg-none flex-column container-fluid justify-content-center mt-5">
+                <span class="d-flex justify-content-center my-3 py-3 border-top border-light"> Subscribe to our
+                    newsletter?</span>
+                <form class="footer-form form-inline align-content-center justify-content-center ">
+                    <div class="input-group align-content-center">
+                        <input class="form-control" type="text" placeholder="email address">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-dark" type="submit"> Subscribe </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+        </div> <!-- end row-->
+    </div> <!-- end container-->
+    </div>
+    <div class="copyright d-flex justify-content-center align-items-center p-1">
+        <span>&copy; Company</span>
+    </div>
+    
+</body>
+<script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</html>
