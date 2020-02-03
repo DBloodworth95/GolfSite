@@ -15,10 +15,10 @@
 
 
 
-                            <form class="user">
+                            <form class="user" method="POST">>
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first_name"></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="last_name"></div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="firstname" id="exampleFirstName" placeholder="First Name" name="firstname"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="lastname" id="exampleFirstName" placeholder="Last Name" name="lastname"></div>
                                 </div>
                                 <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email"></div>
                                 <div class="form-group row">
@@ -41,6 +41,21 @@
             </div>
         </div>
     </div>
+    <?php
+    if (isset($_POST['register'])) {
+		$stmt = $pdo->prepare('INSERT INTO users(email, password, firstname, surname)
+					VALUES (:email, :password, :firstname, :surname)');
+		$values = [
+			'email' => $_POST['email'],
+			'password' => $_POST['password'],
+			'firstname' => $_POST['firstname'],
+            'surname' => $_POST['lastname']
+		];
+		unset($_POST['submit']);
+		$stmt->execute($values);
+		echo 'Succesfully registered!';
+	}
+	?>
 
 
 
