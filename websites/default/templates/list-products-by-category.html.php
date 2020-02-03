@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Category</title>
-    <script src="main.js"></script>
-</head>
-
-<body>
-
-
-        <main>
-
-
+    
+ 
+    
     <!-- categories  -->
     <div class="subcategories-container container-fluid py-4 mb-3">
 
@@ -211,54 +195,20 @@
         </div> <!-- close filtering section-->
         
 
-       
-
-
-
-
-
-
-
-
-
     <!-- list of products -->
     <div class="d-flex flex-wrap px-4">
         <!-- all these card objects are identical in terms of style-->
 
+       <?php foreach ($products as $product) {?>
         <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
             <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
+            <div class="d-flex justify-content-center product-name pt-2"><?=$product['name'];?></div>
+            <div class="d-flex justify-content-center price"><?=$product['price'];?></div>
         </div>
 
+       <?php }?>
 
 
-
-        <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
-        </div>
-        <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
-        </div>
-        <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
-        </div>
-        <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
-        </div>
-        <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="#"><img src="images/club1.jpg"></a>
-            <div class="d-flex justify-content-center product-name pt-2">Lorem ipsum ipsum</div>
-            <div class="d-flex justify-content-center price">£900.99</div>
-        </div>
     </div>
     </div>
 
@@ -271,11 +221,3 @@
     </div>
 
 
-
-</main>
-</body>
-</body>
-<script src="js/jquery.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</html>

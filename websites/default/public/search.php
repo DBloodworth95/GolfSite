@@ -1,9 +1,18 @@
-
-
 <?php 
 
 session_start();
 require '../templates/connect.php';
+
+$_POST['keyword'] = 'a';
+require '../templates/find-products-by-keyword.php';
+
+
+
+ob_start();
+
+require '../templates/list-products-by-keyword.html.php';
+$content = ob_get_clean();
+
 require '../templates/find-categories.php';
 
 
@@ -27,14 +36,8 @@ $carousel = ob_get_clean();
 
 
 ob_start();
-require '../templates/home-page-content.html.php';
-$content = ob_get_clean();
-
-
-ob_start();
 require '../templates/footer.html.php';
 $footer = ob_get_clean();
 
-
-require '../templates/layout.html.php';
+require '../templates/layout-no-carousel.html.php';
 ?>

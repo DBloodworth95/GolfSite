@@ -1,27 +1,3 @@
-<style>
-    .middle,
-    .last {
-        padding-bottom: 20px;
-    }
-
-    .card p {
-        color: orange !important;
-    }
-
-    .card h6 {
-        color: orange !important;
-    }
-</style>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile - Brand</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
 
 
     <div class="container-fluid">
@@ -38,15 +14,15 @@
 
                         <form>
                             <div class="form-row">
-                                <div class="col">
+                                <!-- <div class="col">
                                     <div class="form-group"><label
                                             for="username"><strong>Username</strong></label><input class="form-control"
-                                            type="text" placeholder="user.name" name="username"></div>
-                                </div>
+                                            type="text" placeholder="" name="username"></div>
+                                </div> -->
                                 <div class="col">
                                     <div class="form-group"><label for="email"><strong>Email
                                                 Address</strong></label><input class="form-control" type="email"
-                                            placeholder="user@example.com" name="email"></div>
+                                            placeholder="<?=$user['email'];?>" name="email"></div>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -168,20 +144,3 @@
 
 
 
-
-
-
-
-
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-
-
-
-
-
-</body>
-
-</html>

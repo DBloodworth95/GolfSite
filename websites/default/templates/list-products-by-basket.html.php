@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Shopping Cart</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-	<main>
-		<section class="container shopping-cart">
+<section class="container shopping-cart">
 			<div class="block-heading">
 				<h2>Shopping Cart</h2>
 			</div>
@@ -21,6 +8,9 @@
 						<div class="items">
 
 <!-- product begins -->
+
+<?php foreach ($products as $product) {?>
+
 							<div class="product">
 								<div class="row">
 									<div class="col-md-4">
@@ -50,7 +40,7 @@
 									</div>
 								</div>
 							</div> <!-- end of product-->
-
+<?php }?>
 
 
 						</div> <!-- enf of items-->
@@ -78,11 +68,3 @@
 				</div>
 			</div>
 		</section>
-	</main>
-</body>
-
-<script src="js/jquery.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-</html>

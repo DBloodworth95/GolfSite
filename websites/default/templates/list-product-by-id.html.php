@@ -1,12 +1,3 @@
-<html>
-
-<head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-</head>
-
-<body>
 
     <div class="container py-5">
         <div class="row">
@@ -26,7 +17,7 @@
             <div class="col-md-5">
                 <div class="row details">
                     <div class="col-12">
-                        <h2 class="pl-2 orange">Lorem Ipsum</h2>
+                        <h2 class="pl-2 orange"><?=$product['name'];?></h2>
                     </div>
                 </div>
                 <p class="description pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -131,10 +122,3 @@
                     </div>
 
                 </div>
-
-
-
-
-</body>
-
-</html>

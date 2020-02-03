@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `csy2028`
+-- Current Database: `golf`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `csy2028` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `golf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 
-USE `csy2028`;
+USE `golf`;
 
 --
 -- Table structure for table `categories`
@@ -31,11 +31,10 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
-  `category_id` int(10) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,8 +43,63 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (6,'IT','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(8,'Sport','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(12,'Vintage','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(15,'Jewelery','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(17,'Books','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(18,'Furniture','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(41,'Home&Garden','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),(43,'Art','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `invoices`
+--
+
+DROP TABLE IF EXISTS `invoices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invoices` (
+  `invoice_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL,
+  `total_amount` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`invoice_id`),
+  KEY `fk_i_orders` (`order_id`),
+  KEY `fk_i_products` (`product_id`),
+  CONSTRAINT `fk_i_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_i_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invoices`
+--
+
+LOCK TABLES `invoices` WRITE;
+/*!40000 ALTER TABLE `invoices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invoices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `order_date` datetime NOT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `fk_o_users` (`user_id`),
+  CONSTRAINT `fk_o_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -56,24 +110,20 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `product_id` int(10) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'ksdnfvb',
-  `user_id` int(10) NOT NULL,
-  `user_f_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pub_date` datetime NOT NULL,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '0',
-  `buy_it_now_price` float DEFAULT '0',
-  `current_bid` float DEFAULT '0',
-  `bidder_id` int(10) DEFAULT NULL,
-  `bidder_f_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image1` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT 'images/product.png',
-  `ended` int(1) DEFAULT '0',
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brand` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `stock` int(11) NOT NULL DEFAULT '0',
+  `subcategory_id` int(11) DEFAULT NULL,
+  `discount_price` decimal(10,2) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`product_id`),
+  KEY `fk_p_subcategory` (`subcategory_id`),
+  CONSTRAINT `fk_p_subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`subcategory_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,36 +132,33 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (60,'Painting','Art','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 18:52:26','2019-11-19 10:29:00','2029-12-17 23:08:33',1,12000000,0,NULL,NULL,'uploads/img3.jpeg',0),(61,'Table','Furniture','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 19:03:41','2019-11-19 10:29:00','2020-10-03 00:00:00',1,50000,0,NULL,NULL,'uploads/table.jpeg',1),(62,'Wardrobe','Furniture','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 19:04:11','2019-11-19 10:29:00','2020-10-01 00:00:00',1,70000,0,NULL,NULL,'uploads/wardrobe.jpeg',0),(63,'Computer','IT','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 19:04:24','2019-11-19 10:29:00','2020-10-01 00:00:00',1,50000,50000,127,'Laura','uploads/computer.jpeg',1),(64,'Mirror','Furniture','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 19:04:57','2019-01-19 10:29:00','2039-12-17 23:11:00',1,50,0,NULL,NULL,'uploads/mirror.jpeg',0),(65,'Chaise Lounge','Home&Garden','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 18:59:22','2019-11-19 10:29:00','2020-10-01 00:00:00',1,3400,0,NULL,NULL,'uploads/chaise lounge.jpeg',0),(66,'Garden set','Home&Garden','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 18:53:30','2019-11-19 10:29:00','2020-10-03 00:00:00',1,70000,0,NULL,NULL,'uploads/img4.jpeg',0),(67,'Garden gnome','Home&Garden','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 18:54:04','2019-11-19 10:29:00','2020-10-03 00:00:00',1,50000,0,NULL,NULL,'uploads/img5.jpeg',0),(69,'Bookcase','Furniture','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 18:55:28','2019-11-19 10:29:00','2020-10-01 00:00:00',1,70000,0,NULL,NULL,'uploads/bookcase.jpeg',0),(70,'Door','Home&Garden','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i',5,'User','2019-12-23 19:00:04','2019-11-19 10:29:00','2020-10-03 00:00:00',1,70000,0,NULL,NULL,'uploads/door.jpeg',0),(75,'Painting','Art','Beautiful painting',5,'User','2019-12-18 15:19:01','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,NULL,NULL,'uploads/img2.jpeg',0),(109,'Book','IT','Book',127,'Laura','2020-01-02 15:36:32','2019-11-19 10:29:00','2020-10-01 12:23:33',1,45678,45678,5,'User','uploads/book2.jpeg',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `reviews`
+-- Table structure for table `subcategories`
 --
 
-DROP TABLE IF EXISTS `reviews`;
+DROP TABLE IF EXISTS `subcategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `reviews` (
-  `review_id` int(10) NOT NULL AUTO_INCREMENT,
-  `target_user_id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `user_f_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `post_date` datetime NOT NULL,
-  `content` blob NOT NULL,
-  PRIMARY KEY (`review_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `subcategories` (
+  `subcategory_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`subcategory_id`,`title`),
+  KEY `fk_s_categories` (`category_id`),
+  CONSTRAINT `fk_s_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `reviews`
+-- Dumping data for table `subcategories`
 --
 
-LOCK TABLES `reviews` WRITE;
-/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (25,5,118,'Admin','2019-12-18 01:13:58','Great User'),(27,5,121,'sfgryhf','2019-12-18 11:55:28','user is great'),(28,5,123,'Laura','2019-12-18 14:57:49','jdgsejhgf'),(29,5,124,'Laura','2019-12-18 15:21:41','Great user'),(30,5,127,'Laura','2020-01-02 15:38:21','Great user');
-/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+LOCK TABLES `subcategories` WRITE;
+/*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -122,14 +169,19 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `user_id` int(10) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `surname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_admin` int(1) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'UK',
+  `postcode` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +190,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'Admin','Admin','admin2@gmail.com','$2y$10$Vq4zoEdBGM8FBgnrIh8.ruX8gkMv54e.X3zoddDy5KCrwtim3IOTy',1),(5,'User','User','user@gmail.com','$2y$10$IfZh.hVmsxZYqovrr1CLA.QJw/CAxT9yNcidMTO71wLzqoPyPzIdC',0),(7,'User','User','user3@gmail.com','$2y$10$odutfZsm/aHGjEG.Gixm/egGAYGAU/qPA0h9uae6eul3p7jc1e6TO',0),(119,'Laura','Laura','user1@gmail.com','$2y$10$8p0khrF88ZJk71d240gd0OMaFe5L1MAbJecO/4Oma3KeHVekRSu1m',0),(120,'Laura','Laura','user2@gmail.com','$2y$10$7w/n6OrgmNPbii6VIroZqOfbwSx40/IlTboLcyEojraqnSrNozlzS',0),(126,'Admin','Admin','admin@gmail.com','$2y$10$wQ9XPRhiVdUnQWFUSlFzRethreOrhjhq7lqDWUu4OKpUSw3PkbT0q',1),(127,'Laura','Ghiorghisor','laura.ghiorghisor@gmail.com','$2y$10$.pctzMSh58oHKAM3KLqKfe7qi5aPRNGdiPXCCRqd//rhzM0FE5eFO',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -954,4 +1005,4 @@ CREATE TABLE IF NOT EXISTS `slow_log` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-05 13:13:39
+-- Dump completed on 2020-02-03 14:48:51

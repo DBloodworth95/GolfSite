@@ -1137,3 +1137,21 @@ img.basket-image {
 		text-align: center; 
 	}
 }
+
+
+
+
+/* profile page  */
+
+.middle,
+.last {
+    padding-bottom: 20px;
+}
+
+.card p {
+    color: orange !important;
+}
+
+.card h6 {
+    color: orange !important;
+}

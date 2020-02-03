@@ -18,7 +18,7 @@
                     <a class="account nav-item nav-link" href="/account.html"></a>
                     <a class="topbar-link nav-item nav-link" href="/basket.html">Basket</a>
                     <a class="basket nav-item nav-link" href="/basket.html"><span class="basket-counter">100</span></a>
-                    <a class="topbar-link nav-item nav-link" href="/login.html">Log in/Register</a>
+                    <a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>
                     <a class="login nav-item nav-link" href="/login.html"></a>
                 </div>
             </div>
@@ -58,12 +58,7 @@
             <!-- collapsible -->
             <div class=" px-0 pb-0 pt-3 collapse navbar-collapse" id="toggleMyNav">
                 <div class="separator px-0">
-                    <a class="px-0 nav-item nav-link active" href="#">Category </a>
-                    <a class="px-0 nav-item nav-link" href="#">Category </a>
-                    <a class="px-0 nav-item nav-link" href="#">Category </a>
-                    <a class="px-0 nav-item nav-link" href="#">Category </a>
-                    <a class="px-0 nav-item nav-link" href="#">Category </a>
-                    <a class="px-0 nav-item nav-link" href="#">Category </a>
+                  <?php require 'category-list.html.php';?>
                 </div>
 
                 <div class="wishlist-container d-flex flex-row align-items-center py-3 ">

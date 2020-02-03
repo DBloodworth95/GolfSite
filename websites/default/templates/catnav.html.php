@@ -4,12 +4,16 @@
     <nav
         class="navbar d-none d-lg-flex bg-light align-items-center justify-content-around  border-bottom border-dark sticky-top secondNav">
         <!-- <div class="navbar-brand">WEBSITE COOL </div> -->
+        
+        <?php require 'category-list-second.html.php';?>
         <a class="cat-drop-down nav-item nav-link active" href="#">Category </a>
+
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
+        
         <div class="d-flex flex-row align-items-center">
             <a class="p-0 pr-1 nav-item nav-link font-weight-bold" href="#">Wishlist </a>
             <a class="p-0 wishlist nav-item nav-link" href="#"></a>
@@ -31,7 +35,7 @@
 
     <!-- second nav drops -->
 
-    <div class="container-fluid drop-content  px-5 py-3">
+    <div class="container-fluid drop-content  d-none px-5 py-3">
 
         <div class="row d-flex ">
 
