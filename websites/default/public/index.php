@@ -3,11 +3,14 @@
 <?php
 
 session_start();
-<<<<<<< HEAD
+if (isset($_POST["addProduct"])) {
+	unset($_POST["addProduct"]);
+	array_push($_SESSION["cartProducts"], $_POST);
+	unset($_POST);
+}
+
 require '../templates/connect.php';
 require '../templates/find-categories.php';
-=======
->>>>>>> 870a7d7b09cabeb682ef20fe5ccf1639b7d512ef
 
 
 
