@@ -22,15 +22,15 @@
                    echo' <a class="topbar-link nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'">Account</a>';
                    ?>
                     <a class="account nav-item nav-link" href="/profile.php"></a>
-                    <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
-                    <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
+                    <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
+                    <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
                     <?php
                     if ($_SESSION['loggedin'] == 0) {
                         $_SESSION['loggedin'] = 0;
-                    echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>';
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in /Register</a>';
                     }
                     else {
-                        echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Logout</a>';
+                        echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Logout</a>';
                     }
                     ?>
                     <a class="login nav-item nav-link" href="/login.html"></a>
