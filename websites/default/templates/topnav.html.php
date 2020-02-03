@@ -8,7 +8,7 @@
             <div class=" d-flex flec-row align-self-center justify-self-start p-0">
                 <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="#"><span
                         class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> GOLFERS ONLY </a>
+                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> STUARTS BALLS </a>
             </div>
 
 
@@ -44,7 +44,7 @@
 
             <div class=" d-flex flex-row align-content-center justify-self-center p-0">
                 <a class="navbar-brand d-flex align-self-center  p-0" href="#"><span class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center p-0" href="#"> GOLFERS ONLY </a>
+                <a class="navbar-brand  title d-flex align-self-center p-0" href="#"> STUARTS BALLS </a>
             </div>
 
 
