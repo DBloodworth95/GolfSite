@@ -10,19 +10,19 @@ ob_start();
 require '../templates/list-products-by-category.html.php';
 $content = ob_get_clean();
 
-require '../templates/find-categories.php';
+
 
 
 
 // $login ='Log in';
-
-
 ob_start();
+require '../templates/find-categories.php';
 require '../templates/topnav.html.php';
 $topnav = ob_get_clean();
 
 
 ob_start();
+require '../templates/find-categories.php';
 require '../templates/catnav.html.php';
 $catnav = ob_get_clean();
 

@@ -1,25 +1,9 @@
 
-
-    <!-- second nav -->
-    <nav
+ <nav
         class="navbar d-none d-lg-flex bg-light align-items-center justify-content-around  border-bottom border-dark sticky-top secondNav">
         <!-- <div class="navbar-brand">WEBSITE COOL </div> -->
-<<<<<<< HEAD
-        
-        <?php require 'category-list-second.html.php';?>
-        <a class="cat-drop-down nav-item nav-link active" href="#">Category </a>
+       <?php require 'find-categories.php'; require 'category-list-second.html.php';?>
 
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-=======
-        <a class="cat-drop-down nav-item nav-link active" href="/category.html.php">Clubs </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Clothes </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Balls </a>
->>>>>>> 870a7d7b09cabeb682ef20fe5ccf1639b7d512ef
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        
         <div class="d-flex flex-row align-items-center">
             <a class="p-0 pr-1 nav-item nav-link font-weight-bold" href="#">Wishlist </a>
             <a class="p-0 wishlist nav-item nav-link" href="#"></a>
