@@ -44,7 +44,7 @@
 
             <div class=" d-flex flex-row align-content-center justify-self-center p-0">
                 <a class="navbar-brand d-flex align-self-center  p-0" href="#"><span class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center p-0" href="#"> STUARTS BALLS </a>
+                <a class="navbar-brand  title d-flex align-self-center p-0" href="index.php"> STUARTS BALLS </a>
             </div>
 
 
