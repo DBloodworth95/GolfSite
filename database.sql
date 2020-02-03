@@ -174,12 +174,6 @@ CREATE TABLE `users` (
   `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `firstname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `surname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'UK',
-  `postcode` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dob` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
