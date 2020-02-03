@@ -4,6 +4,13 @@
 
 session_start();
 
+require 'connect.php';
+require 'topnav.php';
+require 'catnav.php';
+require 'carousel.php';
+require 'home-page-content';
+
+
 $login ='Log in';
 
 
