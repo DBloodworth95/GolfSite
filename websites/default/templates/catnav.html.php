@@ -10,7 +10,7 @@
 
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
-        <a class="cat-drop-down nav-item nav-link active" href="/category.html.php">Clubs </a>
+        <a class="cat-drop-down nav-item nav-link active" href="/category-page.php">Clubs </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Clothes </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Balls </a>
         <a class="cat-drop-down nav-item nav-link" href="#">Category </a>
