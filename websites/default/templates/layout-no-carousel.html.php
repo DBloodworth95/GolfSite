@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Page</title>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     
 </head>
 
