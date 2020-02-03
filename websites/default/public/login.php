@@ -22,7 +22,7 @@ require '../templates/footer.html.php';
 $footer = ob_get_clean();
 
 
-require '../templates/layoutnocarouselnomain.html.php';
+require '../templates/layout-no-carousel.html.php';
 ?>
 
 
