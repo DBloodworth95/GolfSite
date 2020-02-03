@@ -388,7 +388,7 @@ h1 a {
 }
 
 .col-12.black-bg a {
-    color: white;
+    color: white !important;
 }
 
 .col-12.black-bg a:hover {
