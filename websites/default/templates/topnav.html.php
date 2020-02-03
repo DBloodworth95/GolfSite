@@ -8,7 +8,7 @@
             <div class=" d-flex flec-row align-self-center justify-self-start p-0">
                 <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="#"><span
                         class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> STUARTS BALLS </a>
+                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="index.php"> STUARTS BALLS <small class="under-title d-flex align-self-end justify-self-end p-0"> the best price around</small> </a>
             </div>
 
 

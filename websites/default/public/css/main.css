@@ -1155,3 +1155,11 @@ img.basket-image {
 .card h6 {
     color: orange !important;
 }
+
+.under-title {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: orange !important;
+    font-size: 1rem;
+    text-transform: lowercase;
+}
