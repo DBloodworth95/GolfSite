@@ -34,7 +34,7 @@ CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Clubs');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +124,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`product_id`),
   KEY `fk_p_subcategory` (`subcategory_id`),
   CONSTRAINT `fk_p_subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`subcategory_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,6 +133,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'TP Red Collection Chaska Putter','TaylorMade Golf','Milled 304 stainless steel heads with Tour Red finish for a premium look and feel with high contrast coloring for improved alignment',290.00,400,1,NULL,0,'images/putter1.jpg'),(2,'GBB Epic Star Driver','Callaway Golf','Ultralight 286-gram total weight based on Mitsubishi Grand Bassara shaft, 41-gram Golf Pride J200 grip, 9.7-gram triaxial carbon crown.',230.00,200,2,NULL,0,'images/driver1.jpg'),(3,'SIM Driver','TaylorMade Golf','Our obsession with helping golfers improve has driven us beyond the traditional. We have reinvented the shape of the driver to deliver a new level of Speed and Forgiveness through advanced aerodynamics combined with a high-MOI multi-material construction.',500.00,100,2,NULL,0,'images/driver2.jpg'),(4,'Deep Red Maxx Irons (7 Iron Set)','Wilson Golf','Powerful Iron design concentrates \"game improvement\" mass behind the sweet spot for improved distance',170.00,50,3,NULL,0,'images/iron1.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +151,7 @@ CREATE TABLE `subcategories` (
   PRIMARY KEY (`subcategory_id`,`title`),
   KEY `fk_s_categories` (`category_id`),
   CONSTRAINT `fk_s_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,6 +160,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+INSERT INTO `subcategories` VALUES (1,'Putters',1),(2,'Drivers',1),(3,'Irons',1);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,6 +177,12 @@ CREATE TABLE `users` (
   `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `firstname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `surname` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'UK',
+  `postcode` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -999,4 +1008,4 @@ CREATE TABLE IF NOT EXISTS `slow_log` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-03 14:48:51
+-- Dump completed on 2020-02-03 21:45:02
