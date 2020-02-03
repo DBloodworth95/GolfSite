@@ -35,7 +35,7 @@
 							<font face="Tahoma" color="#000000">PSPID</font>
 						</td>
 						<td>
-							<input type="text" name="PSPID" value="xxxxxxxxxxx">
+							<input type="text" name="PSPID" value="UoN2020Grp3" contenteditable="false">
 						</td>
 					</tr>
 					
@@ -53,7 +53,7 @@
 							<font face="Tahoma" color="#000000">Amount</font>
 						</td>
 						<td>
-							<input type="text" name="AMOUNT" value="">
+							<input type="text" name="AMOUNT" value="<?php echo $_POST['AMOUNT']?>"/>
 						</td>
 					</tr>
 					
@@ -71,7 +71,7 @@
 							<font face="Tahoma" color="#000000">SHA IN</font>
 						</td>
 						<td>
-							<input type="text" name="SHAIN" value="XXXXXXXXXXXXXXXXX">
+							<input type="text" name="SHAIN" value="d18f95c0-320b-4034-a00e-7a5ee5e1638b" contenteditable="false">
 						</td>
 					</tr>
 					

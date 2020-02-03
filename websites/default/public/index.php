@@ -1,10 +1,13 @@
 
 
-<?php 
+<?php
 
 session_start();
+<<<<<<< HEAD
 require '../templates/connect.php';
 require '../templates/find-categories.php';
+=======
+>>>>>>> 870a7d7b09cabeb682ef20fe5ccf1639b7d512ef
 
 
 
@@ -38,3 +41,5 @@ $footer = ob_get_clean();
 
 require '../templates/layout.html.php';
 ?>
+
+<?php require 'basket.html.php'?>

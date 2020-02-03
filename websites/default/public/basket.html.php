@@ -21,10 +21,14 @@
 						<div class="items">
 
 <!-- product begins -->
-							<div class="product">
+
+                            <form action="" method="post">
+                            <?php foreach ($cartProducts as $product) {?>
+                            <div class="product">
+
 								<div class="row">
 									<div class="col-md-4">
-										<img class="img-fluid mx-auto d-block basket-image" src="images/club1.jpg">
+										<img class="img-fluid mx-auto d-block basket-image" src=<?=$product["name"]?>>
 									</div>
 
 									<div class="col-md-8">
@@ -32,9 +36,9 @@
 											<div class="row">
 												<div class="col-md-5 product-name">
 													<div class="product-name">
-														<a class="basket-title orange" href="#">Lorem Ipsum dolor</a>
+														<a class="basket-title orange" href="#"></a>
 														<div class="product-info">
-															<div>Display: <span class="value">5 inch</span></div>
+															<input>Display: <span class="value">5 inch</span></input>
 															<div>RAM: <span class="value">4GB</span></div>
 															<div>Memory: <span class="value">32GB</span></div>
 															<div>Quantity: <span class="value">2</span></div>
@@ -49,7 +53,10 @@
 										</div>
 									</div>
 								</div>
+
 							</div> <!-- end of product-->
+                            <?php }?>
+
 
 
 
