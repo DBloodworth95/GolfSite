@@ -28,4 +28,24 @@
                 <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g1.jpeg"></a></div>
                 <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g2.jpeg"></a></div>
             </div>
+            <style>
+                #map{
+                    height:400px;
+                    width:100%;
+                }
+                </style>
+            <h1>Google Map</h1>
+        <div id="map"></div>
+            <script>
+                function initMap() {
+                    var options = {
+                        zoom:15,
+                        center:{lat:52.2405, lng:0.9027}
+                    }
+
+                    var map = new google.maps.Map(document.getElementById('map'), options);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHaJQhY3xhbfj2YwALEt5yJr6sEXH4Dm0&callback=initMap"
+            async defer></script>
     
