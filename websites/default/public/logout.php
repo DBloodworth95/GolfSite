@@ -1,10 +1,5 @@
-<?php 
-
-
-session_start();
-
-// unset existing session
-unset($_SESSION['loggedin']);
-
-header("location: index.php");
+<?php
+session_start(); 
+unset($_SESSION['loggedin']); 
+echo 'You are now logged out, <a href="index.php">return to home page.</a>';
 ?>
