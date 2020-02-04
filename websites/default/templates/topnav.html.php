@@ -27,10 +27,10 @@
                     <?php
                     if ($_SESSION['loggedin'] == 0) {
                         $_SESSION['loggedin'] = 0;
-                    echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>';
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in /Register</a>';
                     }
                     else {
-                        echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Logout</a>';
+                        echo'<a class="topbar-link nav-item nav-link" href="/logout.php"> Logout</a>';
                     }
                     ?>
                     <a class="login nav-item nav-link" href="/login.html"></a>
