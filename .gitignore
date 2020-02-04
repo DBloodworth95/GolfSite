@@ -1,0 +1,5 @@
+.vagrant
+.idea
+/Vagrantfile
+import.sql
+websites/database.sql
