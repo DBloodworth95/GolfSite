@@ -9,7 +9,13 @@
 
 <!-- product begins -->
 
-<?php foreach ($products as $product) {?>
+<?php 
+// var_dump($_SESSION);
+$keys = array_keys($_SESSION);
+
+for($i = 0; $i < count($_SESSION); $i++)  {?>
+
+
 
 							<div class="product">
 								<div class="row">
@@ -24,10 +30,10 @@
 													<div class="product-name">
 														<a class="basket-title orange" href="#">Lorem Ipsum dolor</a>
 														<div class="product-info">
-															<div>Display: <span class="value">5 inch</span></div>
-															<div>RAM: <span class="value">4GB</span></div>
-															<div>Memory: <span class="value">32GB</span></div>
-															<div>Quantity: <span class="value">2</span></div>
+
+														<?php foreach($_SESSION[$keys[$i]] as $key => $value) {?>
+															<div><?=$key?><span class="value"><?=$val?></span></div>
+														<?php } ?>
 														</div>
 													</div>
 												</div>
