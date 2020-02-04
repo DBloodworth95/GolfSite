@@ -90,7 +90,7 @@ echo $prod['price'];?>
 							</div>
 							<div class="summary-item"><span class="text">Total</span><span class="price"><?=$_SESSION['total']?></span>
 							</div>
-							<a href="payment.html"><button type="button"
+							<a href="payment.php"><button type="button"
 														   class="btn btn-basket btn-orange btn-lg btn-block">Checkout</button></a>
 						</div>
 					</div>

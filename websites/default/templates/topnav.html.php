@@ -47,7 +47,7 @@
 
 
     <!-- drop down -->
-    <nav class="navbar d-lg-none navbar-light bg-light  border-top sticky-top py-2 px-0">
+    <nav class="navbar d-lg-none navbar-light bg-light  border-bottom border-top sticky-top py-2 px-0">
         <div class="container-fluid align-content-center ">
 
             <button class="navbar-toggler  d-lg-none d-flex flex-column justify-self-start" type="button"
