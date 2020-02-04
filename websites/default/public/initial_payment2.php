@@ -21,8 +21,7 @@
 	<head>
 		
 	</head>
-	<body bgcolor="#80CC99">
-		<font face="Tahoma" color="#000000">
+	<body>
 			<h1 align="center">Payment Page</h1>
 			<p></p>
 			<p>Transaction Value = <?php print $ACTUALAMOUNT ?></p>

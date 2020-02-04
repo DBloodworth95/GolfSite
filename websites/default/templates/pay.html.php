@@ -2,7 +2,7 @@
 
 <?php 
 $SHASIGN = "??????";
-if (isset($_POST['clear'])){ echo "clear";?>
+if (isset($_POST['clear'])){ ?>
 
   <div class="page payment-page">
     <section class="payment-form dark">
@@ -49,7 +49,7 @@ if (isset($_POST['clear'])){ echo "clear";?>
 <div class="row">
                   <div class="form-group col-6">
                     <label>SHA IN</label>
-                    <input type="text" class="form-control" value="" name="SHAIN" contenteditable="false">
+                    <input type="hidden" class="form-control d-none" value="" name="SHAIN" contenteditable="false">
                   </div>
                   <div class="form-group col-6">
                     <input type="hidden" class="form-control" name="SHASIGN" value="">
