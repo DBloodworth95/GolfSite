@@ -24,16 +24,18 @@
                     <a class="account nav-item nav-link" href="/profile.php"></a>
                     <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
                     <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
+
                     <?php
-                    if ($_SESSION['loggedin'] == 0) {
-                        $_SESSION['loggedin'] = 0;
-                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in /Register</a>';
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 0) {
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in/Register</a>
+                    <a class="login nav-item nav-link" href="/login.php"></a>';
                     }
-                    else {
-                        echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Logout</a>';
+                    else   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != 0) {
+                        echo'<a class="topbar-link nav-item nav-link" href="/logout.php"> Logout</a>
+                        <a class="logout nav-item nav-link" href="/logout.php"></a>';
                     }
                     ?>
-                    <a class="login nav-item nav-link" href="/login.html"></a>
+                   
                 </div>
             </div>
         </div>

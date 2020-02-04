@@ -1,18 +1,5 @@
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - Brand</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-   
-    <link rel="stylesheet" href="css/main.css">
-    
-    
-</head>
 
-
-
-<body>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
@@ -27,6 +14,7 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
+                                    
                                     <form class="user" form action="login-page-query.php" method="POST">
                                         <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email"></div>
                                         <div class="form-group"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"></div>
@@ -49,7 +37,3 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
-

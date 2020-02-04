@@ -1,6 +1,7 @@
 <?php
-session_start();
+// session_start();
 require '../templates/connect.php';
+
 if (isset($_POST['submit'])) {
     $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
     $details = [
@@ -11,13 +12,17 @@ if (isset($_POST['submit'])) {
     if ($stmt->rowCount() > 0) {
         $user = $stmt->fetch();
         if ($_POST['password'] == $user['password']) {
+            session_start();
             $_SESSION['loggedin'] = $user['user_id'];
-                header("location: index.php");
-                session_start();
+                // header("location: index.php");
+                $content = "sfdg";
+             
         }
+        
         if ($_POST['email'] !== $user['email'] ) {
-            echo 'Sorry, your username and password could not be found Please try <a href="login.php"> again!</a>';
+            $content= 'Sorry, your username and password could not be found Please try <a href="login.php"> again!</a>';
         }
     }
 }
+else $content = require '../templates/login-content.html.php';
 ?>
