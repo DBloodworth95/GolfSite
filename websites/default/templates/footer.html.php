@@ -11,9 +11,9 @@
                 </div>
 
                 <div class=" col d-flex flex-column">
-                    <a class="title">Help</a>
-                    <a href="#">Lessons</a>
-                    <a href="#">Quality check</a>
+                    <a class="title">Extras</a>
+                    <a href="/booking.php">Bookings</a>
+                    <a href="#">Become a member</a>
                     <a href="#">Custom</a>
                 </div>
 
@@ -40,9 +40,10 @@
             <div class="row d-flex d-lg-none flex-column container-fluid justify-content-center mt-5">
                 <span class="d-flex justify-content-center my-3 py-3 border-top border-light"> Subscribe to our
                     newsletter?</span>
-                <form class="footer-form form-inline align-content-center justify-content-center ">
+
+                <form class="footer-form form-inline align-content-center justify-content-center " action="add-newsletter.php" method="POST">
                     <div class="input-group align-content-center">
-                        <input class="form-control" type="text" placeholder="email address">
+                        <input class="form-control" type="text" placeholder="email address" name="email">
                         <div class="input-group-append">
                             <button class="btn btn-outline-dark" type="submit"> Subscribe </button>
                         </div>

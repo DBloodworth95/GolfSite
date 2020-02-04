@@ -1169,3 +1169,7 @@ img.basket-image {
     font-size: 1rem;
     text-transform: lowercase;
 }
+
+.none {
+    display: none;
+}

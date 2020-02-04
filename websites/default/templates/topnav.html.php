@@ -18,10 +18,15 @@
 
 
             <div class=" px-0 d-flex flex-row justify-content-space-between">
-                <div class="px-0 d-flex flex-row "><?php
-                   echo' <a class="topbar-link nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'">Account</a>';
+                <div class="px-0 d-flex flex-row ">
+                    <?php  if (isset($_SESSION['loggedin'])) {
+                   echo' <a class="topbar-link nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'">Account</a>
+                   <a class="account nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'"></a>';
+                    }
+                    else echo '<a class="topbar-link nav-item nav-link" href="#">Account</a>
+                    <a class="account nav-item nav-link" href="#"></a>';
                    ?>
-                    <a class="account nav-item nav-link" href="/profile.php"></a>
+                   
                     <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
                     <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
 
@@ -66,7 +71,11 @@
 
 
             <div class=" drop-icons d-flex flex-row align-items-center  p-0 m-0">
-                <a href="/profile.php" class="account nav-item nav-link"></a>
+            <?php  if (isset($_SESSION['loggedin'])) {
+echo  ' <a href="/profile.php" class="account nav-item nav-link"></a>';
+            } else 
+            echo  ' <a href="" class="account nav-item nav-link"></a>';?>
+
                 <a href="/basket.php" class="basket nav-item nav-link"><span class="basket-counter">10</span></a>
 
               

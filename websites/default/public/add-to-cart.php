@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (isset($_POST['add'])){
+
+
+$_SESSION['card-tax']= 0.5;
+
 $_SESSION['cart_counter']++;
 unset ($_POST['add']);
 require '../templates/connect.php';
@@ -15,6 +20,5 @@ foreach($_POST as $key => $val)
 
 }
 
-var_dump($_SESSION['basket']);
-
+}
 ?>

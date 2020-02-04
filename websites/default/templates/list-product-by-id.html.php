@@ -70,7 +70,9 @@
 
                 <div class="col-6 col-sm-6 col-md-6">
                     <!-- <form action="#"> -->
+                        
                     <label>Quantity: </label><input class="quantity" type="number" min="1" value="1" name="quantity" />
+                    <p>Current Stock: <?=$product["stock"]?></p>
                     <!-- </form> -->
                 </div>
 
@@ -102,7 +104,7 @@
             <div class="row">
 
                 <div class="col-6 d-flex flex-row align-items-center">
-                    <h4 class="price orange"> <label name="price">£1.500</label></h4>
+                    <h4 class="price orange"> <label name="price"><?=$product['price']?></label></h4>
                 </div>
 
                 <div class="col-6 d-flex flex-row align-items-center">

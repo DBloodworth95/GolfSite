@@ -195,7 +195,7 @@ $subcats->execute(['id' => $_GET['id']]);
 
        <?php foreach ($products as $product) {?>
         <div class=" card-product d-flex flex-column col-6 col-md-4 col-md-4 col-lg-3 p-3">
-            <a href="/product-page.php"><img src=<?=$product["image"]?>></a>
+            <a href="/product-page.php?product_id=<?=$product['product_id']?>"><img src="<?=$product['image']?>"></a>
             <div class="d-flex justify-content-center product-name pt-2"><?=$product['name'];?></div>
             <div class="d-flex justify-content-center price">£<?=$product['price']?></div>
         </div>

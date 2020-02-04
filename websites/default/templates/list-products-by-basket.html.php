@@ -12,6 +12,8 @@
 <!-- product begins -->
 
 <?php 
+$total =0;
+if (isset($_SESSION['basket'])) {
 
 foreach ($_SESSION['basket'] as $key => $val)
 {
@@ -25,7 +27,7 @@ $prod = $stmt->fetch();
 							<div class="product">
 								<div class="row">
 									<div class="col-md-4">
-										<img class="img-fluid mx-auto d-block basket-image" src="images/club1.jpg">
+										<img class="img-fluid mx-auto d-block basket-image" src="<?=$prod['image']?>">
 									</div>
 
 									<div class="col-md-8">
@@ -57,7 +59,7 @@ $prod = $stmt->fetch();
 												<div class="col-md-7 price">
 													<span>
 <?php 
-$_SESSION['total'] +=$prod['price'];
+$total +=$prod['price'];
 echo $prod['price'];?>
 
 
@@ -69,9 +71,9 @@ echo $prod['price'];?>
 									</div>
 								</div>
 							</div> <!-- end of product-->
-<?php }?>
+<?php }}?>
 
-
+<?php $_SESSION["total"] = $total?>
 						</div> <!-- enf of items-->
 					</div>
 				</div>
@@ -82,16 +84,25 @@ echo $prod['price'];?>
 					<div class="col-12 col-md-6 container">
 						<div class="summary">
 							<h3>Summary</h3>
-							<div class="summary-item"><span class="text">Subtotal</span><span class="price"><?=$_SESSION['total']?></span>
+							<div class="summary-item"><span class="text">Subtotal</span><span class="price">£<?=isset($_SESSION['basket']) ? $total : 0?></span>
 							</div>
-							<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span>
+							<div class="summary-item"><span class="text">Discount</span><span class="price">£0.00</span>
 							</div>
 							<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span>
 							</div>
-							<div class="summary-item"><span class="text">Total</span><span class="price"><?=$_SESSION['total']?></span>
+							<div class="summary-item"><span class="text">Total</span><span class="price">£<?=isset($_SESSION['basket']) ? $total : 0?></span>
 							</div>
-							<a href="payment.php"><button type="button"
-														   class="btn btn-basket btn-orange btn-lg btn-block">Checkout</button></a>
+
+							<a href="payment.php">
+                                <?php if (isset($_SESSION["basket"])) { ?>
+                                        <button type="button" class="btn btn-basket btn-orange btn-lg btn-block">Checkout</button>
+
+                                <?php
+                                } else {?>
+                                <button type="button" class="btn btn-orange btn-lg btn-block">Checkout</button>
+                                <?php } ?>
+
+                            </a>
 						</div>
 					</div>
 				</div>
