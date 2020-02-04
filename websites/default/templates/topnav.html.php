@@ -1,9 +1,9 @@
 
     <!-- big screen nav -->
     <?php
-        if (!isset($_SESSION['loggedin'])) {
-            $_SESSION['loggedin'] = 0;
-        }
+        // if (!isset($_SESSION['loggedin'])) {
+        //     $_SESSION['loggedin'] = 0;
+        // }
     ?>
     <nav class="navbar d-none d-lg-flex navbar-light bg-light 
         border-top border-bottom border-dark sticky-top basketNav p-0">
@@ -26,12 +26,12 @@
                     <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
 
                     <?php
-                    if ($_SESSION['loggedin'] == 0) {
-                        $_SESSION['loggedin'] = 0;
+                    if (!isset($_SESSION['loggedin'])){
+                       
                     echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in/Register</a>';
-                   
-
                     }
+
+                    
                     else {
                         echo'<a class="topbar-link nav-item nav-link" href="/logout.php"> Logout</a>';
                     }

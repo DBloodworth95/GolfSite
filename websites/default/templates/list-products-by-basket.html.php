@@ -1,3 +1,5 @@
+<!-- <?php session_start(); ?> -->
+
 <section class="container shopping-cart">
 			<div class="block-heading">
 				<h2>Shopping Cart</h2>
@@ -10,10 +12,13 @@
 <!-- product begins -->
 
 <?php 
-// var_dump($_SESSION);
-$keys = array_keys($_SESSION);
 
-for($i = 0; $i < count($_SESSION); $i++)  {?>
+foreach ($_SESSION['basket'] as $key => $val)
+{
+	$stmt = $pdo->prepare('SELECT * FROM products WHERE product_id = :id');
+$stmt->execute(['id' => $key]);
+$prod = $stmt->fetch();
+?>
 
 
 
@@ -28,18 +33,36 @@ for($i = 0; $i < count($_SESSION); $i++)  {?>
 											<div class="row">
 												<div class="col-md-5 product-name">
 													<div class="product-name">
-														<a class="basket-title orange" href="#">Lorem Ipsum dolor</a>
+														<a class="basket-title orange" href="#"><?=$prod['name']?></a>
 														<div class="product-info">
 
-														<?php foreach($_SESSION[$keys[$i]] as $key => $value) {?>
-															<div><?=$key?><span class="value"><?=$val?></span></div>
-														<?php } ?>
+													<?php 
+														foreach($val as $a => $b)
+															{?>
+																
+															
+															
+
+															<div style="text-transform: uppercase;"> <?=$a;?>
+															<span class="value"> 
+																
+														
+														<?= $b; ?>
+															</span></div>
+															<?php }?>
 														</div>
 													</div>
 												</div>
 											
 												<div class="col-md-7 price">
-													<span>$120</span>
+													<span>
+<?php 
+$_SESSION['total'] +=$prod['price'];
+echo $prod['price'];?>
+
+
+
+													</span>
 												</div>
 											</div>
 										</div>
@@ -59,13 +82,13 @@ for($i = 0; $i < count($_SESSION); $i++)  {?>
 					<div class="col-12 col-md-6 container">
 						<div class="summary">
 							<h3>Summary</h3>
-							<div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span>
+							<div class="summary-item"><span class="text">Subtotal</span><span class="price"><?=$_SESSION['total']?></span>
 							</div>
 							<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span>
 							</div>
 							<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span>
 							</div>
-							<div class="summary-item"><span class="text">Total</span><span class="price">$360</span>
+							<div class="summary-item"><span class="text">Total</span><span class="price"><?=$_SESSION['total']?></span>
 							</div>
 							<a href="payment.html"><button type="button"
 														   class="btn btn-basket btn-orange btn-lg btn-block">Checkout</button></a>

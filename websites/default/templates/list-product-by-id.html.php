@@ -102,7 +102,7 @@
             <div class="row">
 
                 <div class="col-6 d-flex flex-row align-items-center">
-                    <h4 class="price orange"> £1.500</h4>
+                    <h4 class="price orange"> <label name="price">£1.500</label></h4>
                 </div>
 
                 <div class="col-6 d-flex flex-row align-items-center">
