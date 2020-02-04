@@ -6,9 +6,9 @@
 
 
             <div class=" d-flex flec-row align-self-center justify-self-start p-0">
-                <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="#"><span
+                <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="."><span
                         class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> GOLFERS ONLY </a>
+                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="."> GOLFERS ONLY </a>
             </div>
 
 
@@ -16,8 +16,8 @@
                 <div class="px-0 d-flex flex-row ">
                     <a class="topbar-link nav-item nav-link" href="/profile.php">Account</a>
                     <a class="account nav-item nav-link" href="/profile.php"></a>
-                    <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
-                    <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
+                    <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
+                    <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
                     <a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>
                     <a class="login nav-item nav-link" href="/login.html"></a>
                 </div>

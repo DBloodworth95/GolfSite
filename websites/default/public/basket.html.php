@@ -21,44 +21,40 @@
 						<div class="items">
 
 <!-- product begins -->
-
-                            <form action="" method="post">
-                            <?php if (isset($_SESSION["cartProducts"])) {
-								foreach ($_SESSION["cartProducts"] as $product)
-								{?>
-                            <div class="product">
-
+							
+					<?php if (isset($_SESSION["basket"])) {
+						foreach ($_SESSION["basket"] as $product) {?>
+							
+							<div class="product">
 								<div class="row">
 									<div class="col-md-4">
-										<img class="img-fluid mx-auto d-block basket-image" src=<?=$product["image"]?>>
+										<img class="img-fluid mx-auto d-block basket-image" src="images/club1.jpg">
 									</div>
-
+									
 									<div class="col-md-8">
 										<div class="info">
 											<div class="row">
 												<div class="col-md-5 product-name">
 													<div class="product-name">
-														<a class="basket-title orange" href="#"></a>
+														<a class="basket-title orange" href="#"><?=$product["name"]?></a>
 														<div class="product-info">
-															<div>id: <span class="value"><?=$product["product_id"]?></span></div>
 															<div>Name: <span class="value"><?=$product["name"]?></span></div>
-															<div>Price: <span class="value"><?=$product["price"]?></span></div>
+															<div>Brand: <span class="value"><?=$product["brand"]?></span></div>
 															<div>Quantity: <span class="value">2</span></div>
 														</div>
 													</div>
 												</div>
-											
+												
 												<div class="col-md-7 price">
-													<span>$120</span>
+													<span>£<?=$product["price"]?></span>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-
 							</div> <!-- end of product-->
-                            <?php }
-                            }?>
+						<?php }
+					}?>
 
 
 

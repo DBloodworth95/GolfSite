@@ -1,6 +1,26 @@
 <?php 
 
 session_start();
+
+	
+if (isset($_POST["addToBasket"])) {
+	$basketResults = [
+
+		"name" => $_POST['name'],
+		"brand" => $_POST['brand'],
+		"price" => $_POST['price'],
+		"image" => $_POST['image'],
+		"slice" => "/"
+	];
+
+	$_SESSION["basket"] = [$basketResults];
+}
+
+if(isset($_POST['remove'])) {
+    unset($_SESSION["basket"]);
+}
+
+
 require '../templates/connect.php';
 
 require '../templates/find-products-by-basket.php';
@@ -12,10 +32,7 @@ $content = ob_get_clean();
 
 require '../templates/find-categories.php';
 
-
-
 // $login ='Log in';
-
 
 ob_start();
 require '../templates/topnav.html.php';

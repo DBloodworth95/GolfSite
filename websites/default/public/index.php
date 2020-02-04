@@ -39,5 +39,3 @@ $footer = ob_get_clean();
 
 require '../templates/layout.html.php';
 ?>
-
-<?php require 'basket.html.php'?>

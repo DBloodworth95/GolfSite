@@ -1,5 +1,4 @@
-
-    <div class="container py-5">
+<div class="container py-5">
         <div class="row">
             <div class="col-md-7">
                 <div class="row">
@@ -111,14 +110,20 @@
                     <div class="col-6 d-flex flex-row align-items-center">
 
                         <div class="mr-3">
-                            <form-inline action="#">
+                            <form inline action="#">
                                 <label class="wishlist product-page"></label>
-                            </form>
+                            </form inline>
                         </div>
 
-                        <div>
-                            <div class="add"><button class="btn add-to-cart btn-md orange" type="button"> Add to Cart</button></div>
-                        </div>
+<!--                        Fake form to send fake data as a post request -->
+						<form action="/basket.php" method="post">
+							<input type = "hidden" name="name" value=<?=$product['name']?>>
+							<input type = "hidden" name="addToBasket">
+							<input type = "hidden" name="price" value="1.500">
+							<input type = "hidden" name="image" value="images/iron1.jpg">
+							<input type = "hidden" name="brand" value="TP Red">
+                            <div class="add"><button class="btn add-to-cart btn-md orange" type="submit" name="addToBasket"> Add to Cart</button></div>
+                        </form>
                     </div>
 
                 </div>

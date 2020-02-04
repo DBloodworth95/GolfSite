@@ -9,7 +9,9 @@
 
 <!-- product begins -->
 
-<?php foreach ($products as $product) {?>
+
+<?php if (isset($_SESSION["basket"])) {
+	foreach ($_SESSION["basket"] as $product) {?>
 
 							<div class="product">
 								<div class="row">
@@ -17,30 +19,35 @@
 										<img class="img-fluid mx-auto d-block basket-image" src="images/club1.jpg">
 									</div>
 
-									<div class="col-md-8">
+									<div class="col-md-6">
 										<div class="info">
 											<div class="row">
 												<div class="col-md-5 product-name">
 													<div class="product-name">
-														<a class="basket-title orange" href="#">Lorem Ipsum dolor</a>
+														<a class="basket-title orange" href="#"><?=$product["name"]?></a>
 														<div class="product-info">
-															<div>Display: <span class="value">5 inch</span></div>
-															<div>RAM: <span class="value">4GB</span></div>
-															<div>Memory: <span class="value">32GB</span></div>
+															<div>Name: <span class="value"><?=$product["name"]?></span></div>
+															<div>Brand: <span class="value"><?=$product["brand"]?></span></div>
 															<div>Quantity: <span class="value">2</span></div>
 														</div>
 													</div>
 												</div>
 											
 												<div class="col-md-7 price">
-													<span>$120</span>
+													<span>£<?=$product["price"]?></span>
 												</div>
 											</div>
 										</div>
 									</div>
+									<div class="col-md-2">
+										<form method="post">
+											<button name="remove" type="submit">Remove from cart</button>
+										</form>
+									</div>
 								</div>
 							</div> <!-- end of product-->
-<?php }?>
+<?php }
+}?>
 
 
 						</div> <!-- enf of items-->
