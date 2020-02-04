@@ -37,6 +37,13 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+CREATE TABLE `golf`.`booking` (
+  `user_id` INT NOT NULL,
+  `firstname` VARCHAR(45) NULL,
+  `lastname` VARCHAR(45) NULL,
+  `date` VARCHAR(45) NULL,
+  `hasbuggy` INT NULL,
+  PRIMARY KEY (`user_id`));
 --
 -- Dumping data for table `categories`
 --
