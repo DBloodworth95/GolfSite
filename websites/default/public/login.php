@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
             // session_start();
 
             $_SESSION['loggedin'] = $user['user_id'];
+            $_SESSION['cart-counter'] = 0;
             var_dump($_SESSION['loggedin']);
             $content = "sfdg";
                 header("location: /index.php");
