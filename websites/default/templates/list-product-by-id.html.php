@@ -19,13 +19,11 @@
                         <h2 class="pl-2 orange"><?=$product['name'];?></h2>
                     </div>
                 </div>
-                <p class="description pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    sollicitudin elit massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos. Mauris malesuada rutrum magna. </p>
+                <p class="description pl-2">Cor-Eye Technology helps create a more flexible, free-moving face to boost ball speeds, increase distance, and allows you to hit the ball higher.</p>
                 <div class="row py-2">
                     <div class="col-6 col-sm-6 col-md-6">
                         <form action="#">
-                            <select>
+                            <select >
                                 <option>Chose Loft</option>
                                 <option>Style1</option>
                                 <option>Style2</option>

@@ -1,24 +1,38 @@
 
     <!-- big screen nav -->
-    <nav class="navbar d-none d-lg-flex navbar-light bg-light 
+    <?php
+        if (!isset($_SESSION['loggedin'])) {
+            $_SESSION['loggedin'] = 0;
+        }
+    ?>
+    <nav class="navbar d-none d-lg-flex navbar-light bg-light
         border-top border-bottom border-dark sticky-top basketNav p-0">
         <div class="container-fluid px-4 d-flex flex-row justify-content-between">
 
 
             <div class=" d-flex flec-row align-self-center justify-self-start p-0">
-                <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="."><span
+                <a class="navbar-brand d-flex align-self-center justify-self-start p-0" href="#"><span
                         class="brandLogo p-0"> </span></a>
-                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="."> GOLFERS ONLY </a>
+                <a class="navbar-brand  title d-flex align-self-center justify-self-end p-0" href="#"> GOLFERS ONLY </a>
             </div>
 
 
             <div class=" px-0 d-flex flex-row justify-content-space-between">
-                <div class="px-0 d-flex flex-row ">
-                    <a class="topbar-link nav-item nav-link" href="/profile.php">Account</a>
+                <div class="px-0 d-flex flex-row "><?php
+                   echo' <a class="topbar-link nav-item nav-link" href="/profile.php?user_id='.$_SESSION['loggedin'].'">Account</a>';
+                   ?>
                     <a class="account nav-item nav-link" href="/profile.php"></a>
-                    <a class="topbar-link nav-item nav-link" href="/basket.php">Basket</a>
-                    <a class="basket nav-item nav-link" href="/basket.php"><span class="basket-counter">100</span></a>
-                    <a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>
+                    <a class="topbar-link nav-item nav-link" href="/basket.html.php">Basket</a>
+                    <a class="basket nav-item nav-link" href="/basket.html.php"><span class="basket-counter">100</span></a>
+                    <?php
+                    if ($_SESSION['loggedin'] == 0) {
+                        $_SESSION['loggedin'] = 0;
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Log in /Register</a>';
+                    }
+                    else {
+                        echo'<a class="topbar-link nav-item nav-link" href="/login.html"> Logout</a>';
+                    }
+                    ?>
                     <a class="login nav-item nav-link" href="/login.html"></a>
                 </div>
             </div>
