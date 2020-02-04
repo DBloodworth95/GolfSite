@@ -112,6 +112,9 @@ a:visited {
 .login {
     background-image: url(../images/login.png);
 }
+.logout {
+    /* background-image: url(../images/login-locked.png); */
+}
 
 a.basket:hover {
     background-image: url(../images/basket-hover.png);
@@ -123,6 +126,9 @@ a.account:hover {
 
 a.login:hover {
     background-image: url(../images/login-hover.png);
+}
+a.logout:hover {
+    /* background-image: url(../images/login-locked-hover.png); */
 }
 
 .basket-counter {

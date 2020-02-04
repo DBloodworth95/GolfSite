@@ -1,5 +1,4 @@
 
-
     <div class="container-fluid">
         <h3 class="text-dark my-4">Profile</h3>
 
@@ -14,71 +13,58 @@
 
                         <form>
                             <div class="form-row">
-                                <!-- <div class="col">
-                                    <div class="form-group"><label
-                                            for="username"><strong>Username</strong></label><input class="form-control"
-                                            type="text" placeholder="" name="username"></div>
-                                </div> -->
-                                <?php
-                                $getProfile = $pdo->prepare('SELECT * FROM users WHERE user_id = :user_id');
-                                $profile = [
-                                    'user_id' => $_GET['user_id']
-                                ];
-                                
-                                $getProfile->execute($profile);
-                                foreach ($getProfile as $userid) {
-                
-                                echo'<div class="col">';
-                                    echo'<div class="form-group"><label for="email"><strong>Email';
-                                                echo'Address</strong></label><input class="form-control" type="email"';
-                                            echo'placeholder="'.$userid['email'].'" name="email"></div>';
-                                echo'</div>';
-                            echo'</div>';
-                                
-                                
-                                
-                            echo'<div class="form-row">';
-                               echo '<div class="col">';
-                                   echo' <div class="form-group"><label for="first_name"><strong>First';
-                                                echo'Name</strong></label><input class="form-control" type="text"';
-                                            echo'placeholder="'.$userid['firstname'].'" name="first_name"></div>';
-                                echo'</div>';
-                                echo'<div class="col">';
-                                    echo'<div class="form-group"><label for="last_name"><strong>Last';
-                                               echo' Name</strong></label><input class="form-control" type="text"';
-                                           echo' placeholder="'.$userid['surname'].'" name="last_name"></div>';
-                                echo'</div>';
-                            echo'</div>';
-                            echo'<div class="form-group"><button class="btn btn-profile btn-sm" type="submit">Save ';
-                                    echo'Settings</button></div>';
-                        echo'</form>';
-                    echo'</div>';
-                echo'</div>';
+                               
+                                <div class="col">
+                                    <div class="form-group"><label for="email"><strong>Email
+                                                Address</strong></label><input class="form-control" type="email"
+                                            placeholder="<?=$user['email']?>" name="email"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group"><label for="first_name"><strong>First
+                                                Name</strong></label><input class="form-control" type="text"
+                                            placeholder="<?=$user['firstname']?>" name="first_name"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group"><label for="last_name"><strong>Last
+                                                Name</strong></label><input class="form-control" type="text"
+                                            placeholder="<?=$user['surname']?>" name="last_name"></div>
+                                </div>
+                            </div>
+                            <div class="form-group"><button class="btn btn-profile btn-sm" type="submit">Save
+                                    Settings</button></div>
+                        </form>
+                    </div>
+                </div>
 
-            echo'</div> <!--end of user settings-->';
-                                
+            </div> <!--end of user settings-->
       
 
-        echo'<!-- contact settings -->';
-        echo'<div class="col-12 col-lg-6">';
-            echo'<div class="card shadow">';
-                echo'<div class="card-header py-2">';
-                   echo' <p class="text-primary m-0 font-weight-bold">Contact Settings</p>';
-                echo'</div>';
-                echo'<div class="card-body">';
-                    echo'<form>';
-                        echo'<div class="form-group"><label for="address"><strong>Address</strong></label><input';
-                                echo' <div class="form-control" type="text" placeholder="'.$userid['address'].'" name="address"></div>';
-                        echo'<div class="form-row">';
-                            echo'<div class="col">';
-                               echo' <div class="form-group"><label for="city"><strong>City</strong></label><input';
-                                       echo' class="form-control" type="text" placeholder="'.$userid['city'].'" name="city"></div>';
-                            echo'</div>';
-                                
-                                
-                        echo'</div>';
-                                }
-                                ?>
+        <!-- contact settings -->
+        <div class="col-12 col-lg-6">
+            <div class="card shadow">
+                <div class="card-header py-2">
+                    <p class="text-primary m-0 font-weight-bold">Contact Settings</p>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group"><label for="address"><strong>Address</strong></label><input
+                                class="form-control" type="text" placeholder="<?=$user['address']?>" name="address"></div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label for="city"><strong>City</strong></label><input
+                                        class="form-control" type="text" placeholder="<?=$user['city']?>" name="city"></div>
+                            </div>
+                            <div class="col">
+
+                                <div class="form-group"><label for="country"><strong>Country</strong></label><select
+                                        name="country" class="form-control">
+                                        <option>USA</option>
+                                        <option>UK</option>
+                                    </select></div>
+                            </div>
+                        </div>
                         <div class="form-group"><button class="btn btn-profile btn-sm"
                                 type="submit">Save&nbsp;Settings</button></div>
                     </form>
@@ -149,7 +135,3 @@
                 </div>
             </div>
         </div> <!-- end of row -->
-
-
-
-

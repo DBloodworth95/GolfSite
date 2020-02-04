@@ -28,13 +28,15 @@
                     <?php
                     if ($_SESSION['loggedin'] == 0) {
                         $_SESSION['loggedin'] = 0;
-                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in /Register</a>';
+                    echo'<a class="topbar-link nav-item nav-link" href="/login.php"> Log in/Register</a>';
+                   
+
                     }
                     else {
                         echo'<a class="topbar-link nav-item nav-link" href="/logout.php"> Logout</a>';
                     }
                     ?>
-                   
+                    <a class="login nav-item nav-link" href="/login.php"></a>
                 </div>
             </div>
         </div>
@@ -66,6 +68,8 @@
             <div class=" drop-icons d-flex flex-row align-items-center  p-0 m-0">
                 <a href="/profile.php" class="account nav-item nav-link"></a>
                 <a href="/basket.php" class="basket nav-item nav-link"><span class="basket-counter">10</span></a>
+
+              
                 <a href="/login.php" class="login nav-item nav-link"></a>
             </div>
 

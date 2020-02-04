@@ -1,5 +1,9 @@
 
-    
+    <?php
+$subcats = $pdo->prepare('SELECT * FROM subcategories WHERE category_id = :id');
+$subcats->execute(['id' => $_GET['id']]);
+//ORDER BY pub_date DESC
+?>
  
     
     <!-- categories  -->
@@ -7,26 +11,16 @@
 
         <div class="d-flex flex-row">
 
+
+
+        <?php foreach ($subcats as $subcat) {?>
+
             <div class=" col d-flex flex-column ml-lg-2 ">
-                <a class="title"> Sub Category 1</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
+                <a class="title"> <?=$subcat['title'];?></a>
+                <img class="d-flex align-content-center mr-3" src="images/club1.jpg">
             </div>
+        <?php }?>
 
-            <div class=" col d-flex flex-column  ml-lg-2 ">
-                <a class="title"> Sub Category 1</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
-            </div>
-
-            <div class=" col d-flex flex-column ml-lg-2">
-                <a class="title"> Sub Category 1</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
-                <a href="#">Sub-subcategory</a>
-            </div>
         </div> <!-- end row-->
     </div> <!-- end container-->
 

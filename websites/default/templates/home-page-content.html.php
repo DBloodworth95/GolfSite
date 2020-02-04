@@ -29,13 +29,16 @@
                 <div class="col-12 col-sm-6 px-0"><a href="#"><img class="product" src="images/g2.jpeg"></a></div>
             </div>
             <style>
+
                 #map{
                     height:400px;
                     width:100%;
                 }
                 </style>
-            <h1>Google Map</h1>
-        <div id="map"></div>
+
+            <h2 class="col-12 white-bg d-flex justify-content-center py-3">Find us here</h2>
+        <div class="mb-5" id="map"></div>
+
             <script>
                 function initMap() {
                     var options = {
